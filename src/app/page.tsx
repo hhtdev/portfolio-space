@@ -1,8 +1,11 @@
 import styles from "./page.module.scss";
+import Image from 'next/image';
 import Star from "../components/atoms/star/star"
 import Planet from "@/components/organisms/planet/planet";
 
 export default function Home() {
+
+
   return (
     <div className={styles.page}>
       {/* Sky full of stars */}
@@ -15,13 +18,34 @@ export default function Home() {
         <Planet />
       </div>
       <div className={styles.content}>
-        <div className={styles.panel1}>panel 1</div>
-        <div className={styles.panel2}>panel 2</div>
-        <div className={styles.panel3}>panel 3</div>
-        <div className={styles.panel4}>panel 4</div>
-        <div className={styles.panel5}>panel 5</div>
-        <div className={styles.panel6}>panel 6</div>
+        <div className={styles.panel1}>
+          <div className={`${styles.panel1_left} ${styles.panel_radius}`}>
+            <div className={styles.wrapper_panel_gradient_border}>
+              <div className={styles.panel1_image}>
+                <Image src="/astro_photo.jpeg" alt="planet" fill object-fit="contain" />
+              </div>
+              <div className={styles.panel1_content}>
+                <h2>Qui suis-je ?</h2>
+                <p>Hello ! Voici une courte description de qui je suis et ce que je fais. Je n'ai encore rien écrit mais tkt ça va venir.</p>
+              </div>
+            </div>
+          </div>
+          <div className={`${styles.panel1_right} ${styles.panel_radius}`}>
+            <div className={styles.wrapper_panel_gradient_border}>
+              <div className={styles.skills}>
+                <h2>Compétences</h2>
+                <ul>
+                  <li>J'ai</li>
+                  <li>Pas</li>
+                  <li>Encore</li>
+                  <li>Contribué</li>
+                  <li>Ça</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div >
+    </div>
   );
 }
