@@ -1,4 +1,3 @@
-"use client";
 import styles from "./planet.module.scss";
 
 export default function Planet() {
